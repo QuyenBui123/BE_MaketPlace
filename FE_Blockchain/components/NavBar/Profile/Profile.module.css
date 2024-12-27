@@ -1,0 +1,66 @@
+.profile {
+    position: absolute;
+    box-shadow: var(--box-shadow);
+    font-size: 1rem;
+    border-radius: 1rem;
+    left: -15rem;
+    width: 17rem;
+    top: 3.5rem;
+    z-index: 2222222222;
+    background-color: var(--background-btn);
+
+}
+
+.profile_account {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+.profile_account_img{
+    border-radius: 50%;
+}
+
+.profile_account_info{
+    line-height: 0.3;
+}
+
+.profile_account_info p {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.profile_menu_one_item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0rem 1.5rem;
+    transition: all .3s ease-in;
+}
+
+.profile_menu_one_item a {
+    text-decoration: none;
+    color: black;
+}
+.profile_menu_one_item:hover a{
+    color: white;
+}
+
+.profile_menu_one_item:hover {
+    background-color: var(--icons-color);
+    color: var(--shadow-dark-color);
+    border-radius: .3rem;
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 768px){
+    .profile{
+        left: -14rem;
+    }
+}
+
+
+
+
+
+
