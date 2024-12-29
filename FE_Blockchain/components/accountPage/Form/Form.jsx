@@ -16,10 +16,13 @@ import { useEffect } from "react";
 //INTERNAL IMPORT
 import Style from "./Form.module.css";
 import { Button } from "../../componentsindex";
-import { useDropzone } from "react-dropzone";
 import axios from "axios";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+
 const Form = ({ user }) => {
   const [fileUrl, setFileUrl] = useState(null);
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -68,9 +71,19 @@ const Form = ({ user }) => {
       }
     );
 
+    toast.success("Edit profile successful!", {
+      position: "top-center",
+      autoClose: 2000,
+      theme: "light",
+      pauseOnHover: "true",
+      hideProgessBar: "true",
+    });
+
     if (response.ok) {
-      console.log("User updated successfully");
+      console.log("Edit successful");
     }
+
+    router.push("/author");
   }
 
   return (

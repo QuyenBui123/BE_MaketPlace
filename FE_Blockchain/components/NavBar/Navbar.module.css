@@ -96,7 +96,9 @@
     position: relative;
     cursor: pointer;
  }
-
+.navbar_container_right_profile{
+    border-radius: 50%;
+}
  .navbar_container_right_menuBtn {
     display: none;
  }

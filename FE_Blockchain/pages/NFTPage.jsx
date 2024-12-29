@@ -13,6 +13,7 @@ const NFTPage = () => {
   const [nfts, setNfts] = useState([]);
   const [nftCopy, setNFTCoppy] = useState([]);
 
+
   useEffect(() => {
     console.log("nft page");
     fetchNFTS()
@@ -27,6 +28,7 @@ const NFTPage = () => {
         console.error("Error fetching NFTs:", error);
       });
   }, []);
+
   // Log the updated nfts state
   useEffect(() => {
     console.log("nft", nfts);

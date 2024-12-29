@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+// import React, { useState, useEffect, useContext } from "react";
 import { FaUserAlt, FaRegImage, FaUserEdit } from "react-icons/fa";
 import { MdHelpCenter } from "react-icons/md";
 import { TbDownloadOff, TbDownload } from "react-icons/tb";
@@ -9,30 +10,33 @@ import { useRouter } from "next/router";
 import Style from "./Profile.module.css";
 import images from "../../../img";
 import { useContext } from "react";
+import { NFTMarketplaceContext } from "../../../Context/NFTMarketplaceContext";
 
 const Profile = ({ currentAccount }) => {
   const router = useRouter();
+  const { user } = useContext(NFTMarketplaceContext);
 
-const handleDisconnect = () => {
-  // Xóa thông tin tài khoản đã kết nối
-  localStorage.removeItem("walletAddress"); // Hoặc Redux, Context, etc.
-  // Điều hướng về trang Home
-  router.push("/");
-  // Hiển thị thông báo (nếu cần)
-  alert("Disconnected from MetaMask");
-};
+  const handleDisconnect = () => {
+    // Xóa thông tin tài khoản đã kết nối
+    localStorage.removeItem("walletAddress"); // Hoặc Redux, Context, etc.
+    // Điều hướng về trang Home
+    router.push("/");
+    // Hiển thị thông báo (nếu cần)
+    alert("Disconnected from MetaMask");
+  };
   return (
     <div className={Style.profile}>
       <div className={Style.profile_account}>
         <Image
-          src={images.user1}
+          src={user.avatar || images.user1}
           alt="user profile"
           width={50}
           height={50}
+          style={{ width: "50px", height: "50px" }}
           className={Style.profile_account_img}
         />
         <div className={Style.profile_account_info}>
-          <p>daniel</p>
+          <p>{user.name}</p>
           <small>{currentAccount.slice(0, 18)}...</small>
         </div>
       </div>

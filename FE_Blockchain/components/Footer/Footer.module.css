@@ -3,7 +3,14 @@
     padding-block: 1.5rem;
     position: relative;
 }
-
+.logo{
+    display:  flex;
+    margin-bottom: 0.5rem;
+}
+.logo p{
+    font-size: 4rem;
+    margin-left: 0.5rem;
+}
 .footer_box {
     width: 80%;
     margin: 0 auto;

@@ -27,6 +27,7 @@ const NavBar = () => {
   const [profile, setProfile] = useState(false);
   const [openSideMenu, setOpenSideMenu] = useState(false);
   const router = useRouter();
+  const { user } = useContext(NFTMarketplaceContext);
 
   const openMenu = (e) => {
     const btnText = e.target.innerText;
@@ -103,6 +104,19 @@ const NavBar = () => {
   const { currentAccount, connectWallet, openError } = useContext(
     NFTMarketplaceContext
   );
+  const handleSearchEnter = (e) => {
+    if (e.key === "Enter") {
+      const searchTerm = e.target.value;
+      if (searchTerm.trim()) {
+        router.push("/NFTPage?query=${searchTerm}"); // Redirect to NFTPage with search query
+      }
+    }
+  };
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = () => {
+    router.push(`/NFTPage?search=${searchQuery}`);
+  };
 
   return (
     <div className={Style.NavBar}>
@@ -111,7 +125,7 @@ const NavBar = () => {
           <div className={Style.navbar_container_left}>
             <div className={Style.logo}>
               <Image
-                src={images.logo}
+                src={images.image}
                 alt="NFT Marketplace"
                 width={50}
                 height={50}
@@ -124,11 +138,14 @@ const NavBar = () => {
                   isClearable
                   variant="bordered"
                   placeholder="Type your search"
-                  onClear={() => console.log("input cleared")}
+                  onClear={() => setSearchQuery("")}
                   className="max-w-xs"
                   startContent={
                     <FiSearch className="text-black/50 mb-0.5 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />
                   }
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyPress={(e) => e.key === "Enter" && handleSearch()}
                 />
               </div>
             </div>
@@ -143,9 +160,11 @@ const NavBar = () => {
               <p>Discover</p>
               {discover && (
                 <div className={Style.navbar_container_right_discover_box}>
-                  <div className={`rounded-xl shadow-md border border-bordercustom bg-itembackground ${
+                  <div
+                    className={`rounded-xl shadow-md border border-bordercustom bg-itembackground ${
                       theme === "light" ? "bg-white" : "bg-black text-white"
-                    }`}>
+                    }`}
+                  >
                     <Discover setDiscover={setDiscover} />
                   </div>
                 </div>
@@ -196,10 +215,11 @@ const NavBar = () => {
             <div className={Style.navbar_container_right_profile_box}>
               <div className={Style.navbar_container_right_profile}>
                 <Image
-                  src={images.user1}
+                  src={user.avatar || images.user1}
                   alt="Profile"
                   width={40}
                   height={40}
+                  style={{ width: "40px", height: "40px" }}
                   onClick={() => openProfile()}
                   className={Style.navbar_container_right_profile}
                 />

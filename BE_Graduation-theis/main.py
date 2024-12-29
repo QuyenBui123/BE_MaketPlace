@@ -4,8 +4,8 @@ from flask_cors import CORS
 from flask import Flask, request, jsonify
 from datetime import datetime
 
-client = MongoClient("mongodb+srv://nguyenhuuthuat:Thuat123@cluster0.cs9d8wh.mongodb.net/twitter-dev?retryWrites=true&w=majority")
-db = client['Cluster1']
+client = MongoClient("mongodb+srv://beubebong0508:IKuJ7rWhhSWESftO@cluster0.z7su2.mongodb.net?retryWrites=true&w=majority")
+db = client['marketplace']
 
 app = Flask(__name__)
 CORS(app)

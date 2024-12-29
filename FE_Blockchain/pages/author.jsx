@@ -1,7 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react';
-import Style from '../styles/author.module.css';
-import { AuthorProfileCard, AuthorTaps, AuthorNFTCardBox } from '../components/authorPage/componentIndex';
-import { NFTMarketplaceContext } from '../Context/NFTMarketplaceContext';
+import React, { useState, useEffect, useContext } from "react";
+import Style from "../styles/author.module.css";
+import {
+  AuthorProfileCard,
+  AuthorTaps,
+  AuthorNFTCardBox,
+} from "../components/authorPage/componentIndex";
+import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 
 const Author = () => {
   const [colleciables, setColleciables] = useState(true);
@@ -11,7 +15,9 @@ const Author = () => {
   const [following, setFollowing] = useState(false);
   const [nfts, setNfts] = useState([]);
   const [myNFTs, setMyNFTs] = useState([]);
-  const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(NFTMarketplaceContext);
+  const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(
+    NFTMarketplaceContext
+  );
 
   useEffect(() => {
     const fetchNFTs = async () => {
@@ -32,10 +38,10 @@ const Author = () => {
   }, [fetchMyNFTsOrListedNFTs]);
 
   const handleMintNFT = async () => {
-    const name = 'Example NFT';
-    const description = 'This is an example NFT';
-    const imageurl = 'https://example.com/image.png';
-    const category = 'Art';
+    const name = "Example NFT";
+    const description = "This is an example NFT";
+    const imageurl = "https://example.com/image.png";
+    const category = "Art";
 
     const tokenId = await mintNFT(name, imageurl, description, category);
     console.log("Newly minted token ID:", tokenId);
@@ -47,21 +53,21 @@ const Author = () => {
   return (
     <div className={Style.banner}>
       <AuthorProfileCard currentAccount={currentAccount} />
-      <AuthorTaps 
-        setColleciables={setColleciables} 
-        setCreated={setCreated} 
-        setLike={setLike} 
-        setFollower={setFollower} 
-        setFollowing={setFollowing} 
+      <AuthorTaps
+        setColleciables={setColleciables}
+        setCreated={setCreated}
+        setLike={setLike}
+        setFollower={setFollower}
+        setFollowing={setFollowing}
       />
       <AuthorNFTCardBox
-        colleciables={colleciables} 
-        created={created} 
-        like={like} 
-        follower={follower} 
-        following={following} 
-        nfts={nfts} 
-        myNFTs={myNFTs} 
+        colleciables={colleciables}
+        created={created}
+        like={like}
+        follower={follower}
+        following={following}
+        nfts={nfts}
+        myNFTs={myNFTs}
       />
     </div>
   );

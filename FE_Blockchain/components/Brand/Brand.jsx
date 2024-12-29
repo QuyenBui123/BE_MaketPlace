@@ -10,7 +10,7 @@ const { theme, setTheme } = useTheme()
     <div className={Style.Brand}>
         <div className={Style.Brand_box}>
             <div className={Style.Brand_box_left}>
-                <Image src={images.logo} alt='brand logo'
+                <Image src={images.image} alt='brand logo'
                     width={50}
                     height={50}
                     objectFit='cover'

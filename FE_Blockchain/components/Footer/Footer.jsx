@@ -14,7 +14,10 @@ const Footer = () => {
     <div className={Style.footer}>
       <div className={Style.footer_box}>
         <div className={Style.footer_box_social}>
-          <Image src={images.logo} alt='footer logo' height={100} width={100}/>
+          <div className={Style.logo}>
+          <Image src={images.image} alt='footer logo' height={100} width={100}/>
+          <p>Craft</p>
+          </div>
           <p>
           A non-fungible token is a unique digital identifier that is recorded on 
           a blockchain and is used to certify ownership and authenticity. 
