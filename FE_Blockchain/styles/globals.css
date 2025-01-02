@@ -14,15 +14,20 @@
   --icons-light-color: #4c577341;
   --background-btn: #e2e6e9;
   --shadow-dark-color: #c4c4c4;
+  --shadow-light-color: #fff;
   --bg-shadow-dark-color: #d3dae78f;
   --bg-shadow-dark-color1: #d3dae700;
-  --shadow-light-color: #c0c0c0;
-  --shadow-color: rgba(255, 255, 255, 0.8);
-  --box-shadow: 0 4px 6px var(--shadow-color);
+  --shadow-lilor: rgba(255, 255, 255, 0.8);
+  --box-shadoght-color: #c0c0c0;
+  --shadow-cow: 0 4px 6px var(--shadow-color);
   --box-shadow-2: 0 8px 12px var(--shadow-color);
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --box-shadow: 1rem 1rem 1rem var(--shadow-dark-color),
+  -1rem -1rem 1rem var(--shadow-light-color);
+  /* --main-bg-color: #ecf0f3; */
+  
 }
 html, body {
   padding: 0;

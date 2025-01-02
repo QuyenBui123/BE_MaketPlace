@@ -32,7 +32,7 @@ const SearchBar = ({
   useEffect(() => {
     onHandleSearchPrice(priceRange);
   }, [priceRange]);
-  
+
   return (
     <div className={Style.searchBar}>
       <div className="flex flex-col flex-wrap rounded-xl gap-5 justify-around mt-[3rem] py-5 border p-5">
@@ -58,10 +58,9 @@ const SearchBar = ({
           <Select
             label="Sort Price"
             placeholder="Select sort"
-            initialSelectedKeys={['Lowest Price']}
+            initialSelectedKeys={["Lowest Price"]}
             defaultSelectedKeys={["Lowest Price"]}
             className="max-w-xs"
-
             onSelectionChange={(keys) => onHandleSort(keys.currentKey)}
           >
             <SelectItem key="Lowest Price">Lowest Price</SelectItem>
@@ -76,8 +75,8 @@ const SearchBar = ({
             label="Stay duration"
             isRequired
             defaultValue={{
-              start: parseDate("2024-04-01"),
-              end: parseDate("2024-04-08"),
+              start: parseDate("2025-01-01"),
+              end: parseDate("2025-01-08"),
             }}
             className="max-w-xs"
           />

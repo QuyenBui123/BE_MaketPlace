@@ -77,6 +77,7 @@ const NFTCard = ({ NFTData }) => {
               <div className="flex item-center justify-between">
                 <h4 className="text-lg text-textprimary font-semibold">
                   {el.name}# {el.tokenId}
+                  {/* {el.name} */}
                 </h4>
                 <h4 className="">Time</h4>
               </div>

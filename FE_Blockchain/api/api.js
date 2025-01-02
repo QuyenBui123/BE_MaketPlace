@@ -1,7 +1,7 @@
 import axios from 'axios';
 export const fetchPrice = async () => {
   try {
-    const response = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd');
+    const response = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=matic-network&vs_currencies=usd');
     const { data } = response;
     return data;
   } catch (error) {

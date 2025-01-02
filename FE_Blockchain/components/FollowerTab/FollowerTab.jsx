@@ -172,7 +172,7 @@ const Follower = ({TopCreators}) => {
       <div className={Style.followerTab_member}>
         <div className={Style.followerTab_member_box}>
           <a href="">Show me more</a>
-          <a href="">Become author</a>
+          
         </div>
       </div>
     </div>

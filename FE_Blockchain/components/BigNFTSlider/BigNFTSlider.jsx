@@ -44,7 +44,7 @@ const BigNFTSlider = () => {
       price: "0.32 ETH",
       like: 30,
       image: images.user3,
-      nftImage: images.nft2,
+      nftImage: images.cartoon7,
       time: {
         days: 37,
         hours: 10,
@@ -102,7 +102,7 @@ const BigNFTSlider = () => {
     const fetchData = async () => {
       try {
         const response = await fetchPrice();
-        setEthPrice(response.ethereum.usd);
+        setEthPrice(response["matic-network"].usd);
       } catch (error) {
         console.error("Error fetching ETH price:", error);
       }
@@ -123,8 +123,8 @@ const BigNFTSlider = () => {
                   className={Style.bigNFTSlider_box_left_creator_profile_img}
                   alt="profile image"
                   src={sliderData[idNumber].image}
-                  width={50}
-                  height={50}
+                  width={40}
+                  height={40}
                 />
                 <div
                   className={Style.bigNFTSlider_box_left_creator_profile_info}
@@ -136,18 +136,21 @@ const BigNFTSlider = () => {
                     <MdVerified />
                   </h4>
                 </div>
+              </div>
+              <div className="flex ">
                 <div className={Style.bigNFTSlider_box_left_creator_collection}>
                   <AiFillFire
                     className={Style.bigNFTSlider_box_left_creator_icon}
                   />
                 </div>
-              </div>
-
-              <div
-                className={Style.bigNFTSlider_box_left_creator_collection_info}
-              >
-                <p>Colection</p>
-                <p>{sliderData[idNumber].collection}</p>
+                <div
+                  className={
+                    Style.bigNFTSlider_box_left_creator_collection_info
+                  }
+                >
+                  <p>Colection</p>
+                  <p>{sliderData[idNumber].collection}</p>
+                </div>
               </div>
             </div>
             <div className={Style.bigNFTSlider_box_left_bidding}>
@@ -155,6 +158,7 @@ const BigNFTSlider = () => {
                 <small>Current Bid</small>
                 <p className={Style.bigNFTSlider_box_left_bidding_box_icon}>
                   {sliderData[idNumber].price}{" "}
+                  <span className="ml-3">~</span>
                   <span>
                     &nbsp;&nbsp; $
                     {ethPrice &&

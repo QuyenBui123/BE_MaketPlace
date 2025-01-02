@@ -60,6 +60,7 @@ import cartoon3 from "./cartoon3.jpg";
 import cartoon4 from "./cartoon4.jpg";
 import cartoon5 from "./cartoon5.jpg";
 import cartoon6 from "./cartoon6.jpg";
+import cartoon7 from "./cartoon7.jpg";
 import pilot1 from "./pilot1.jpg";
 import pilot2 from "./pilot2.jpg";
 import pilot3 from "./pilot3.jpg";
@@ -80,7 +81,6 @@ import metamark from "./metamark.png";
 import walletconnect from "./walletconnect.png";
 import OKX from "./OKX.png";
 import rainbow from "./rainbow.png";
-import co from "./co.jpg";
 import upload_img from "./upload_img.jpg";
 import loader from "./loader.gif";
 import error from "./error.gif";
@@ -91,7 +91,6 @@ export default {
   error,
   loader,
   upload_img,
-  co,
   rainbow,
   OKX,
   walletconnect,
@@ -119,6 +118,7 @@ export default {
   cartoon4,
   cartoon5,
   cartoon6,
+  cartoon7,
 
   user1,
   logo,

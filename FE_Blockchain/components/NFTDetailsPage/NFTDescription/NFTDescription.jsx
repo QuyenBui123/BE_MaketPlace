@@ -136,7 +136,7 @@ const NFTDescription = ({ nft }) => {
     const fetchData = async () => {
       try {
         const response = await fetchPrice();
-        setEthPrice(response.ethereum.usd);
+        setEthPrice(response["matic-network"].usd);
       } catch (error) {
         // console.error("Error fetching ETH price:", error);
       }

@@ -16,7 +16,7 @@
     position: absolute;
     z-index: 11111;
     background-color: var(--icons-color);
-    color: var(--main-bg-color);
+    color: white;
     margin: 1rem;
     padding: .1rem .5rem;
     border-radius: 2rem;
@@ -37,7 +37,7 @@
 }
 
 .FollowerTabCard_box_profile {
-    grid-column: 1/-1;
+    grid-column: 1 / -1;
     text-align: center;
     margin-top: -2rem;
     position: relative;
@@ -77,6 +77,7 @@
 
 .FollowerTabCard_box_info h4 {
     font-size: 1rem;
+    display: flex;
 }
 
 .FollowerTabCard_box_info_following_before{

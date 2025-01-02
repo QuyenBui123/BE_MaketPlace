@@ -176,7 +176,13 @@ const NavBar = () => {
               <p>Help Center</p>
               {help && (
                 <div className={Style.navbar_container_right_help_box}>
-                  <HelpCenter />
+                  <div
+                    className={`rounded-xl shadow-md border border-bordercustom bg-itembackground ${
+                      theme === "light" ? "bg-white" : "bg-black text-white"
+                    }`}
+                  >
+                    <HelpCenter />
+                  </div>
                 </div>
               )}
             </div>

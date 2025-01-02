@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Button, Image} from "@nextui-org/react";
+import { Button, Image } from "@nextui-org/react";
 
 // INTERNAL IMPORT
 import Style from "./NFTCardTwo.module.css";
 import Link from "next/link";
 import { fetchPrice } from "../../../api/api";
-import CountDown from "../../CountDown/CountDown"
+import CountDown from "../../CountDown/CountDown";
 
 const NFTCardTwo = ({ NFTData }) => {
   const [like, setLike] = useState(false);
@@ -25,7 +25,7 @@ const NFTCardTwo = ({ NFTData }) => {
     const fetchData = async () => {
       try {
         const response = await fetchPrice();
-        setEthPrices(response.ethereum.usd);
+        setEthPrices(response["matic-network"].usd);
       } catch (error) {
         // console.error("Error fetching ETH price:", error);
       }
@@ -50,7 +50,8 @@ const NFTCardTwo = ({ NFTData }) => {
             <div className="p-3">
               <div className="flex item-center justify-between">
                 <h4 className="text-lg text-textprimary font-semibold">
-                  {el.name}# {el.tokenId}
+                  {/* {el.name}# {el.tokenId} */}
+                  {el.name}
                 </h4>
               </div>
               <div>
@@ -64,10 +65,12 @@ const NFTCardTwo = ({ NFTData }) => {
                       {el.price}
                       <span className="text-sm text-gray-500">
                         &nbsp;&nbsp;$
-                        {ethPrices && (ethPrices * el.price).toFixed(0)}
+                        {ethPrices && (ethPrices * el.price).toFixed(2)}
                       </span>
                     </p>
-                    <p className="text-sm text-textprimary"><CountDown timestamp={el.timestamp}/></p>
+                    <p className="text-sm text-textprimary">
+                      <CountDown timestamp={el.timestamp} />
+                    </p>
                   </div>
                 </div>
               </div>

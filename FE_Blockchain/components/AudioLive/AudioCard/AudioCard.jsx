@@ -69,7 +69,7 @@ const AudioCard = () => {
         </div>
         <div className={Style.audioCard_box_details}>
           <div className={Style.audioCard_box_details_info}>
-            <h4>NFT music #234</h4>
+            <h4>NFT music </h4>
             <div className={Style.audioCard_box_details_info_price}>
               <small>Price</small>
               <p>$3,2221</p>
@@ -81,10 +81,10 @@ const AudioCard = () => {
           </div>
         </div>
         <div className={Style.audioCard_box_img}>
-          <Image src={images.music3} 
+          <Image src={images.music7} 
           alt="background"
-          width={500}
-          height={500}
+          width={400}
+          height={400}
           objectFit='cover'
           className={Style.audioCard_box_img_img}
           />

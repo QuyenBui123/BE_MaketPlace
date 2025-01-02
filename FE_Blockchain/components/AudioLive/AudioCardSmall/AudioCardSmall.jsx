@@ -24,7 +24,7 @@ const AudioCardSmal = () => {
           className={Style.audioPlayer_box_img}
         />
         <div className={Style.audioPlayer_box_info}>
-          <h4>NFT music #23</h4>
+          <h4>NFT music</h4>
           <div className={Style.audioPlayer_box_info_box}>
             <div className={Style.audioPlayer_box_like_box}>
               <LikeProfile/>

@@ -19,7 +19,7 @@ const SliderCard = ({el}) => {
                     />
             </motion.div>
             <div className={Style.sliderCard_box_title}>
-                <p>NFT Video #32</p>
+                <p>NFT Video </p>
                 <div className={Style.sliderCard_box_title_like}>
                     <LikeProfile/>
                     <small>1 of 100</small>
